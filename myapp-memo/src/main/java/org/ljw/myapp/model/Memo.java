@@ -12,9 +12,9 @@ import lombok.Setter;
 @Getter
 @Setter
 // 세개 차이는 알겠는데 생략해도 되는 경우가 뭐였더라?
-//@NoArgsConstructor
 //@RequiredArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class Memo {
 	
