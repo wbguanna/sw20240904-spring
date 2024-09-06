@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<ol>
+		<li th:each="memo: ${memos}">
+			<a th:href="/memos/details?memoId=${memo.id}"><span th:text="memo.title"></span></a>|
+			<span th:text="${memo.content}"></span>
+		</li>
+	</ol>
+</body>
+</html>

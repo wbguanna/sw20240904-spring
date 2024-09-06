@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="greetingService1" class="com.example.demo.service.GreetingServiceEng"></bean>
+	<bean id="greetingService2" class="com.example.demo.service.GreetingServiceKor"></bean>
+
+	<!-- // 컨트롤러에서 클래스, 멤버메소드, 필드에 대한 정보 가져온다.. -->
+	<bean id="homeController" class="com.example.demo.controller.HomeController">
+		<!-- 생성자를 이용한 DI -->
+		<!-- // ref로 DI 할 값을 찾는다.. -->
+		<!-- // 보통 constructor DI를 자주사용 -->
+		<constructor-arg ref="greetingService1"></constructor-arg>
+		
+		<!-- setter를 이용한 DI -->
+		<property name="service" ref="greetingService2"></property>
+	</bean>	
+</beans>
